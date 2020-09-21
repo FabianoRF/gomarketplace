@@ -2,27 +2,40 @@
   "products": [
     {
       "id": "123",
-      "title": "Nome do produto 01",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 50
+      "title": "Caneca Typescript",
+      "image_url": "https://http2.mlstatic.com/D_NQ_NP_645140-MLB27350517042_052018-O.jpg",
+      "price": 29
     },
     {
       "id": "1234",
-      "title": "Nome do produto 02",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 60
+      "title": "Headset Gamer Razer",
+      "image_url": "https://images-americanas.b2w.io/produtos/01/00/item/133400/7/133400761SZ.jpg",
+      "price": 699
     },
     {
       "id": "12345",
-      "title": "Nome do produto 03",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 70
+      "title": "Headset Gamer Razer Overwatch",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/61qM76LLF4L._AC_SL1000_.jpg",
+      "price": 2000
     },
     {
       "id": "123456",
-      "title": "Nome do produto 04",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 80
+      "title": "Cadeira Gamer Cruiser",
+      "image_url": "https://images-americanas.b2w.io/produtos/01/00/img/1902668/7/1902668780_1SZ.jpg",
+      "price": 1900
+    },
+    {
+      "id": "123454",
+      "title": "Cadeira Gamer Thunderx3 Bc7",
+      "image_url": "https://images-americanas.b2w.io/produtos/01/00/img/54553/4/54553417_1SZ.jpg",
+      "price": 3000
+    },
+    {
+      "id": "123454",
+      "title": "Microfone de Mesa Condensador",
+      "image_url": "https://images-americanas.b2w.io/produtos/01/00/img/20856/4/20856487_1SZ.jpg",
+      "price": 93
     }
+
   ]
 }

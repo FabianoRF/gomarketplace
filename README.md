@@ -1,6 +1,6 @@
 ## Uma plataforma de agendamento de cliente e barbeiros
 
-<img src="src/assets/banner.png"/>
+<img src="src/assets/banner.jpeg"/>
 
 ### Descrição
 

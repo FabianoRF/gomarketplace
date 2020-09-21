@@ -31,21 +31,81 @@ const CartProvider: React.FC = ({ children }) => {
   useEffect(() => {
     async function loadProducts(): Promise<void> {
       // TODO LOAD ITEMS FROM ASYNC STORAGE
+
+      const productsStorage = await AsyncStorage.getAllKeys();
+
+      console.log('log do load', productsStorage);
     }
 
     loadProducts();
   }, []);
 
-  const addToCart = useCallback(async product => {
-    // TODO ADD A NEW ITEM TO THE CART
-  }, []);
+  const addToCart = useCallback(
+    async (product: Product) => {
+      const doesProductExists = products.find(prod => prod.id === product.id);
 
-  const increment = useCallback(async id => {
-    // TODO INCREMENTS A PRODUCT QUANTITY IN THE CART
-  }, []);
+      if (!doesProductExists) {
+        setProducts([
+          ...products,
+          {
+            ...product,
+            quantity: 1,
+          },
+        ]);
+      }
+    },
+    [products],
+  );
+
+  const increment = useCallback(
+    async id => {
+      const productFinded = products.find(prod => prod.id === id);
+
+      if (productFinded) {
+        const newProducts = products.map(prod => {
+          if (prod.id === id) {
+            return {
+              ...prod,
+              quantity: prod.quantity + 1,
+            };
+          }
+          return prod;
+        });
+
+        setProducts(newProducts);
+
+        await AsyncStorage.setItem(
+          String(productFinded?.id),
+          JSON.stringify(productFinded),
+        );
+      }
+    },
+    [products],
+  );
 
   const decrement = useCallback(async id => {
     // TODO DECREMENTS A PRODUCT QUANTITY IN THE CART
+    const productFinded = products.find(prod => prod.id === id);
+
+    if (productFinded) {
+      if (productFinded.quantity > 0) {
+        setProducts([
+          ...products,
+          {
+            ...productFinded,
+            quantity: productFinded?.quantity - 1,
+          },
+        ]);
+        await AsyncStorage.setItem(
+          String(productFinded?.id),
+          JSON.stringify(productFinded),
+        );
+      } else {
+        const newProducts = products.filter(prod => prod.id !== id);
+
+        setProducts(newProducts);
+      }
+    }
   }, []);
 
   const value = React.useMemo(
